@@ -1,7 +1,12 @@
 <?php  
+
+// Generador de SEED para laravel
+// generamos una tabla desde un CSV y luego generamos un bucle para crear un Seed para laravel
+
+
 error_reporting(0);
 function conectar_mysli(){
-	$cons_usuario="root";
+    $cons_usuario="root";
     $cons_contra="root";
     $cons_base_datos="seed";
     $cons_equipo="localhost";
@@ -12,11 +17,9 @@ function conectar_mysli(){
 
 function listar_ficheros(){
    $obj_conexion = conectar_mysli();
-   
+    // cambiar el nombre de la tabla, por la que corresponde
     $sql = "SELECT * FROM `circuitos`";  
     $var_resultado = $obj_conexion->query($sql);
-
-
     return $var_resultado;
 }
 
